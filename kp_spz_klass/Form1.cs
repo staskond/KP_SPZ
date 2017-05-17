@@ -19,6 +19,10 @@ namespace kp_spz_klass
             sdf.GetDeviceInfo();
             GetProcessorInfo sdfs = new GetProcessorInfo();
             sdfs.GetDeviceInfo();
+            GetVideoControllerInfo sdfsq = new GetVideoControllerInfo();
+            sdfsq.GetDeviceInfo();
+            GetBaseBoardInfo qwerty = new GetBaseBoardInfo();
+            qwerty.GetDeviceInfo();
         }
     }
 }
