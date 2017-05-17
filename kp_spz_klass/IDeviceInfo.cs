@@ -9,6 +9,5 @@ namespace kp_spz_klass
     interface IDeviceInfo
     {
         void GetDeviceInfo();
-        
     }
 }
