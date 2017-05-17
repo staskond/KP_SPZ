@@ -1,0 +1,8 @@
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.csprojResolveAssemblyReference.cache
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.Properties.Resources.resources
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.csproj.GenerateResource.Cache
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\bin\Debug\kp_spz_klass.exe.config
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\bin\Debug\kp_spz_klass.exe
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\bin\Debug\kp_spz_klass.pdb
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.exe
+D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.pdb

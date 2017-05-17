@@ -15,6 +15,8 @@ namespace kp_spz_klass
         public Form1()
         {
             InitializeComponent();
+            GetHDDInfo sdf = new GetHDDInfo();
+            sdf.GetDeviceInfo();
         }
     }
 }
