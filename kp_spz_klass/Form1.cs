@@ -17,7 +17,8 @@ namespace kp_spz_klass
             InitializeComponent();
             GetHDDInfo sdf = new GetHDDInfo();
             sdf.GetDeviceInfo();
-
+            GetProcessorInfo sdfs = new GetProcessorInfo();
+            sdfs.GetDeviceInfo();
         }
     }
 }

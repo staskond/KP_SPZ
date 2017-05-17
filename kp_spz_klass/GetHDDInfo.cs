@@ -15,11 +15,11 @@ namespace kp_spz_klass
 
             foreach (ManagementObject queryObj in searcher.Get())
             {
-                hddInfo.Add(new HDDStorageInfo(queryObj["DeviceID"].ToString(), queryObj["SerialNumber"].ToString()
-                    , queryObj["Model"].ToString()
-                    , queryObj["InterfaceType"].ToString()
-                    , queryObj["Manufacturer"].ToString()
-                    , Math.Round(Convert.ToDouble(queryObj["Size"]) / 1024 / 1024 / 1024, 2)));
+                hddInfo.Add(new HDDStorageInfo(queryObj["DeviceID"].ToString(), queryObj["SerialNumber"].ToString(),
+                    queryObj["Model"].ToString(),
+                    queryObj["InterfaceType"].ToString(),
+                    queryObj["Manufacturer"].ToString(),
+                    Math.Round(Convert.ToDouble(queryObj["Size"]) / 1024 / 1024 / 1024, 2)));
             }
         }
     }

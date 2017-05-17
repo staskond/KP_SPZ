@@ -41,7 +41,7 @@ namespace kp_spz_klass
         }
         public override string ToString()
         {
-            return base.ToString() + "DeviceID: " + deviceID +
+            return "DeviceID: " + deviceID +
                 "\nManufacturer: " + manufacturer +
                 "\nModel: " + model + 
                 "\nSerialNumber: " + serialNumber + 
