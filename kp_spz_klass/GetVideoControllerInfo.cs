@@ -9,7 +9,7 @@ namespace kp_spz_klass
 {
     class GetVideoControllerInfo: IDeviceInfo
     {
-        List<VideoControllerStorageInfo> videoControllers = new List<VideoControllerStorageInfo>();
+        public List<VideoControllerStorageInfo> videoControllers = new List<VideoControllerStorageInfo>();
 
         public void GetDeviceInfo()
         {

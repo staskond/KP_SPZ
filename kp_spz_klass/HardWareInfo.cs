@@ -14,18 +14,21 @@ namespace kp_spz_klass
         public string ProcessorID { get; set; }
         public string VideoControllerId { get; set; }
         public string BaseGoardSerialNumber { get; set; }
+        public DateTime EndData { get; set; }
 
         public HardWareInfo(string HDDserialNumber,
             string ProcessorName,
             string ProcessorID,
             string VideoControllerId,
-            string BaseGoardSerialNumber)
+            string BaseGoardSerialNumber,
+            DateTime EndDate)
         {
             this.HDDserialNumber = HDDserialNumber;
             this.ProcessorName = ProcessorName;
             this.ProcessorID = ProcessorID;
             this.VideoControllerId = VideoControllerId;
             this.BaseGoardSerialNumber = BaseGoardSerialNumber;
+            this.EndData = EndData;
         }
     }
 }

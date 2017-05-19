@@ -60,6 +60,7 @@
     <Compile Include="GetHDDInfo.cs" />
     <Compile Include="GetProcessorInfo.cs" />
     <Compile Include="GetVideoControllerInfo.cs" />
+    <Compile Include="HardWareInfo.cs" />
     <Compile Include="HDDStorageInfo.cs" />
     <Compile Include="IDeviceInfo.cs" />
     <Compile Include="ProcessorStorageInfo.cs" />
