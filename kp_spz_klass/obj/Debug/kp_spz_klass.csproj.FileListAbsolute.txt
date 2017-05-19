@@ -16,3 +16,4 @@ E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.Properties.Resources.resou
 E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.csproj.GenerateResource.Cache
 E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.exe
 E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.pdb
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.LicenseError.resources

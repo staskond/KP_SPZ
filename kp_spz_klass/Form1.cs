@@ -48,6 +48,7 @@ namespace kp_spz_klass
                 }
                 else
                 {
+                    OpenErrorWindow();
                     MessageBox.Show("License unactive!", "Уведомление", MessageBoxButtons.OK);
                 }
 
@@ -58,10 +59,24 @@ namespace kp_spz_klass
             }
             catch (SerializationException ex)
             {
+                OpenErrorWindow();
                 MessageBox.Show("Failed to deserialize.", "Ошибка", MessageBoxButtons.OK);
+            }
+            catch (Exception)
+            {
+                OpenErrorWindow();
             }
             finally
             {
+            }
+        }
+        private void OpenErrorWindow()
+        {
+            LicenseError ErrorForm = new LicenseError();
+            ErrorForm.Owner = this;
+            if (ErrorForm.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Close();
             }
         }
     }
