@@ -43,5 +43,15 @@ namespace kp_spz_klass
             this.VideoControllerId = VideoControllerId;
             this.BaseGoardSerialNumber = BaseGoardSerialNumber;
         }
+
+        public bool Equals(HardWareInfo obj)
+        {
+            return (this.BaseGoardSerialNumber.Equals(obj.BaseGoardSerialNumber)
+                && (this.EndData >= obj.EndData)
+                && this.HDDserialNumber.Equals(HDDserialNumber)
+                && this.ProcessorID.Equals(obj.ProcessorID)
+                && this.ProcessorName.Equals(obj.ProcessorName)
+                && this.VideoControllerId.Equals(obj.VideoControllerId));
+        }
     }
 }
