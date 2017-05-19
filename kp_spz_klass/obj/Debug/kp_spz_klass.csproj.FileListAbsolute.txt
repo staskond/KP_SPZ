@@ -7,3 +7,12 @@ D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\bin\Debug\kp_spz_klass.pdb
 D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.exe
 D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.pdb
 D:\Program_STAS\kp_spz\kp_spz_klass\kp_spz_klass\obj\Debug\kp_spz_klass.Form1.resources
+E:\Stas_kp\KP_SPZ\kp_spz_klass\bin\Debug\kp_spz_klass.exe.config
+E:\Stas_kp\KP_SPZ\kp_spz_klass\bin\Debug\kp_spz_klass.exe
+E:\Stas_kp\KP_SPZ\kp_spz_klass\bin\Debug\kp_spz_klass.pdb
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.csprojResolveAssemblyReference.cache
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.Form1.resources
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.Properties.Resources.resources
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.csproj.GenerateResource.Cache
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.exe
+E:\Stas_kp\KP_SPZ\kp_spz_klass\obj\Debug\kp_spz_klass.pdb
