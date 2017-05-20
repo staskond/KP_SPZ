@@ -42,7 +42,7 @@ namespace kp_spz_klass
                         VideoControllerInf.videoControllers[0].GetDeviceID(),
                         BaseBoardInf.baseBoard[0].GetSerialNumber(),
                         Convert.ToDateTime(EndDate.Text));
-
+                    
                     //BinaryFormatter formatter = new BinaryFormatter();
                     //FolderBrowserDialog Folder = new FolderBrowserDialog();
                     //if (Folder.ShowDialog() == DialogResult.OK)
@@ -63,8 +63,9 @@ namespace kp_spz_klass
                     KP_SPZ_V29.SetValue("ProcessorID", HardWare.ProcessorID);
                     KP_SPZ_V29.SetValue("VideoControllerId", HardWare.VideoControllerId);
                     KP_SPZ_V29.SetValue("BaseGoardSerialNumber", HardWare.BaseGoardSerialNumber);
-                    KP_SPZ_V29.SetValue("DateEnd", EndDate.Text);
+                    KP_SPZ_V29.SetValue("DateEnd", Convert.ToDateTime(EndDate.Text));
                     MessageBox.Show("Файл-лицензия успешно сгенерирован", "Успешно!", MessageBoxButtons.OK);
+                    KP_SPZ_V29.Close();
                     //        HDDserialNumber,
                     //string ProcessorName,
                     //string ProcessorID,
