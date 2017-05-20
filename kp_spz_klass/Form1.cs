@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace kp_spz_klass
 
             try
             {
-                HardWareInfo newasd;
+                HardWareInfo GetConfig;
                 GetHDDInfo HDDInf = new GetHDDInfo();
                 HDDInf.GetDeviceInfo();
                 GetProcessorInfo ProcessorInf = new GetProcessorInfo();
@@ -37,12 +38,27 @@ namespace kp_spz_klass
                     BaseBoardInf.baseBoard[0].GetSerialNumber(),
                     DateTime.Today);
 
-                BinaryFormatter formatter = new BinaryFormatter();
-                using (FileStream fsa = new FileStream("E:\\hardware.dat", FileMode.Open))
-                {
-                     newasd = (HardWareInfo)formatter.Deserialize(fsa);
-                }
-                if (newasd.Equals(HardWare))
+                RegistryKey LicenseInfo = Registry.CurrentUser;
+                RegistryKey GetLicenseFile = LicenseInfo.OpenSubKey("KP_SPZ_V29");
+                GetConfig = new HardWareInfo(GetLicenseFile.GetValue("HDDserialNumber").ToString(),
+                    GetLicenseFile.GetValue("ProcessorName").ToString(),
+                    GetLicenseFile.GetValue("ProcessorID").ToString(),
+                    GetLicenseFile.GetValue("VideoControllerId").ToString(),
+                    GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
+                    Convert.ToDateTime(GetLicenseFile.GetValue(("DataEnd"))));
+                GetLicenseFile.Close();
+                //    string HDDserialNumber,
+                //string ProcessorName,
+                //string ProcessorID,
+                //string VideoControllerId,
+                //string BaseGoardSerialNumber,
+                //DateTime endDate)
+                //BinaryFormatter formatter = new BinaryFormatter();
+                //using (FileStream fsa = new FileStream("E:\\hardware.dat", FileMode.Open))
+                //{
+                //     newasd = (HardWareInfo)formatter.Deserialize(fsa);
+                //}
+                if (GetLicenseFile.Equals(HardWare))
                 {
                     MessageBox.Show("License active!", "Уведомление", MessageBoxButtons.OK);
                 }
