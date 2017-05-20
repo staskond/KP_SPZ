@@ -46,7 +46,7 @@ namespace kp_spz_klass
                     GetLicenseFile.GetValue("ProcessorID").ToString(),
                     GetLicenseFile.GetValue("VideoControllerId").ToString(),
                     GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
-                    Convert.ToDateTime(GetLicenseFile.GetValue(("DataEnd"))));                                                                                                                                                                            
+                    Convert.ToDateTime(GetLicenseFile.GetValue(("DateEnd"))));
                 GetLicenseFile.Close();
                 //    string HDDserialNumber,
                 //string ProcessorName,
