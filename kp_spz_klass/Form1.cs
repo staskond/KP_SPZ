@@ -63,7 +63,7 @@ namespace kp_spz_klass
                     KP_SPZ_V29.SetValue("ProcessorID", HardWare.ProcessorID);
                     KP_SPZ_V29.SetValue("VideoControllerId", HardWare.VideoControllerId);
                     KP_SPZ_V29.SetValue("BaseGoardSerialNumber", HardWare.BaseGoardSerialNumber);
-                    KP_SPZ_V29.SetValue("DateEnd", Convert.ToDateTime(EndDate.Text));
+                    KP_SPZ_V29.SetValue("DateEnd", Convert.ToDateTime(EndDate.Text).ToShortDateString());
                     MessageBox.Show("Файл-лицензия успешно сгенерирован", "Успешно!", MessageBoxButtons.OK);
                     KP_SPZ_V29.Close();
                     //        HDDserialNumber,
