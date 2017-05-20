@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,7 +43,7 @@ namespace kp_spz_klass
                         VideoControllerInf.videoControllers[0].GetDeviceID(),
                         BaseBoardInf.baseBoard[0].GetSerialNumber(),
                         Convert.ToDateTime(EndDate.Text));
-                    
+                    TripleDESCryptoServiceProvider TDES = new TripleDESCryptoServiceProvider();
                     //BinaryFormatter formatter = new BinaryFormatter();
                     //FolderBrowserDialog Folder = new FolderBrowserDialog();
                     //if (Folder.ShowDialog() == DialogResult.OK)
@@ -64,6 +65,7 @@ namespace kp_spz_klass
                     KP_SPZ_V29.SetValue("VideoControllerId", HardWare.VideoControllerId);
                     KP_SPZ_V29.SetValue("BaseGoardSerialNumber", HardWare.BaseGoardSerialNumber);
                     KP_SPZ_V29.SetValue("DateEnd", Convert.ToDateTime(EndDate.Text).ToShortDateString());
+                    KP_SPZ_V29.SetValue("Key", TDES.Key);
                     MessageBox.Show("Файл-лицензия успешно сгенерирован", "Успешно!", MessageBoxButtons.OK);
                     KP_SPZ_V29.Close();
                     //        HDDserialNumber,
