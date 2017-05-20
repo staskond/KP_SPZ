@@ -37,7 +37,7 @@ namespace kp_spz_klass
                     VideoControllerInf.videoControllers[0].GetDeviceID(),
                     BaseBoardInf.baseBoard[0].GetSerialNumber(),
                     DateTime.Today);
-
+               
                 RegistryKey LicenseInfo = Registry.CurrentUser;
                 RegistryKey GetLicenseFile = LicenseInfo.OpenSubKey("KP_SPZ_V29");
                 GetConfig = new HardWareInfo(GetLicenseFile.GetValue("HDDserialNumber").ToString(),
