@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,21 +43,41 @@ namespace kp_spz_klass
                         BaseBoardInf.baseBoard[0].GetSerialNumber(),
                         Convert.ToDateTime(EndDate.Text));
 
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    FolderBrowserDialog Folder = new FolderBrowserDialog();
-                    if (Folder.ShowDialog() == DialogResult.OK)
-                    {
+                    //BinaryFormatter formatter = new BinaryFormatter();
+                    //FolderBrowserDialog Folder = new FolderBrowserDialog();
+                    //if (Folder.ShowDialog() == DialogResult.OK)
+                    //{
 
-                        using (FileStream fs = new FileStream(Path.Combine(Folder.SelectedPath, "hardware.dat"), FileMode.OpenOrCreate))
-                        {
-                            formatter.Serialize(fs, HardWare);
-                        }
+                    //    using (FileStream fs = new FileStream(Path.Combine(Folder.SelectedPath, "hardware.dat"), FileMode.OpenOrCreate))
+                    //    {
+                    //        formatter.Serialize(fs, HardWare);
+                    //    }
 
-                        MessageBox.Show("Файл-лицензия успешно сгенирирован!", "Успешно!", MessageBoxButtons.OK);
-                    }
-                }catch(ArgumentException ex)
+                    //    MessageBox.Show("Файл-лицензия успешно сгенирирован!", "Успешно!", MessageBoxButtons.OK);
+                    //}
+
+                    RegistryKey currentPOKey = Registry.CurrentUser;
+                    RegistryKey KP_SPZ_V29 = currentPOKey.CreateSubKey("KP_SPZ_V29");
+                    KP_SPZ_V29.SetValue("HDDserialNumber", HardWare.HDDserialNumber);
+                    KP_SPZ_V29.SetValue("ProcessorName", HardWare.ProcessorName);
+                    KP_SPZ_V29.SetValue("ProcessorID", HardWare.ProcessorID);
+                    KP_SPZ_V29.SetValue("VideoControllerId", HardWare.VideoControllerId);
+                    KP_SPZ_V29.SetValue("BaseGoardSerialNumber", HardWare.BaseGoardSerialNumber);
+                    KP_SPZ_V29.SetValue("DateEnd", EndDate.Text);
+                    MessageBox.Show("Файл-лицензия успешно сгенерирован", "Успешно!", MessageBoxButtons.OK);
+                    //        HDDserialNumber,
+                    //string ProcessorName,
+                    //string ProcessorID,
+                    //string VideoControllerId,
+                    //string BaseGoardSerialNumber
+                }
+                catch(ArgumentException ex)
                 {
                     MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK);
+                }
+                catch(Exception exe)
+                {
+                    MessageBox.Show(exe.Message, "Ошибка", MessageBoxButtons.OK);
                 }
             };
         }
