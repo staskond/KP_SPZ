@@ -59,7 +59,7 @@ namespace kp_spz_klass
                 //{
                 //     newasd = (HardWareInfo)formatter.Deserialize(fsa);
                 //}
-                if (GetLicenseFile.Equals(HardWare))
+                if (GetConfig.Equals(HardWare))
                 {
                     MessageBox.Show("License active!", "Уведомление", MessageBoxButtons.OK);
                 }
