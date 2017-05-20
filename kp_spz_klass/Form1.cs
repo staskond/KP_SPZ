@@ -37,15 +37,16 @@ namespace kp_spz_klass
                     VideoControllerInf.videoControllers[0].GetDeviceID(),
                     BaseBoardInf.baseBoard[0].GetSerialNumber(),
                     DateTime.Today);
-               
+
                 RegistryKey LicenseInfo = Registry.CurrentUser;
                 RegistryKey GetLicenseFile = LicenseInfo.OpenSubKey("KP_SPZ_V29");
+
                 GetConfig = new HardWareInfo(GetLicenseFile.GetValue("HDDserialNumber").ToString(),
                     GetLicenseFile.GetValue("ProcessorName").ToString(),
                     GetLicenseFile.GetValue("ProcessorID").ToString(),
                     GetLicenseFile.GetValue("VideoControllerId").ToString(),
                     GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
-                    Convert.ToDateTime(GetLicenseFile.GetValue(("DataEnd"))));
+                    Convert.ToDateTime(GetLicenseFile.GetValue(("DataEnd").ToString())));                                                                                                                                                                            
                 GetLicenseFile.Close();
                 //    string HDDserialNumber,
                 //string ProcessorName,
@@ -78,9 +79,10 @@ namespace kp_spz_klass
                 OpenErrorWindow();
                 MessageBox.Show("Failed to deserialize.", "Ошибка", MessageBoxButtons.OK);
             }
-            catch (Exception)
+            catch (Exception exe)
             {
-                OpenErrorWindow();
+                MessageBox.Show(exe.Message, "Ошибка", MessageBoxButtons.OK);
+                //OpenErrorWindow();
             }
             finally
             {
