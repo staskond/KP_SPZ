@@ -25,10 +25,13 @@ namespace kp_spz_klass
             {
                 try
                 {
-                    if (Convert.ToDateTime(EndDate.Text) <= DateTime.Today)
+                    if (Convert.ToDateTime(EndDate.Text) < DateTime.Today)
                     {
                         throw new ArgumentException("Дата не может быть меньше текующей!");
-                    };
+                    } else if(Convert.ToDateTime(EndDate.Text) == DateTime.Today)
+                    {
+                        throw new ArgumentException("Дата не может быть равна текующей!");
+                    }
                     GetHDDInfo HDDInf = new GetHDDInfo();
                     HDDInf.GetDeviceInfo();
                     GetProcessorInfo ProcessorInf = new GetProcessorInfo();
@@ -44,20 +47,7 @@ namespace kp_spz_klass
                         BaseBoardInf.baseBoard[0].GetSerialNumber(),
                         Convert.ToDateTime(EndDate.Text));
                     TripleDESCryptoServiceProvider TDES = new TripleDESCryptoServiceProvider();
-                    //BinaryFormatter formatter = new BinaryFormatter();
-                    //FolderBrowserDialog Folder = new FolderBrowserDialog();
-                    //if (Folder.ShowDialog() == DialogResult.OK)
-                    //{
-
-                    //    using (FileStream fs = new FileStream(Path.Combine(Folder.SelectedPath, "hardware.dat"), FileMode.OpenOrCreate))
-                    //    {
-                    //        formatter.Serialize(fs, HardWare);
-                    //    }
-
-                    //    MessageBox.Show("Файл-лицензия успешно сгенирирован!", "Успешно!", MessageBoxButtons.OK);
-                    //}
                     byte[] KeyArray = TDES.Key;
-                    // string bbb = aaa[4].ToString("X2");
                     StringBuilder sb = new StringBuilder();
                     for (int i = 0; i < KeyArray.Count(); i++)
                     {
@@ -75,11 +65,6 @@ namespace kp_spz_klass
                     KP_SPZ_V29.SetValue("Key", sb.ToString());
                     MessageBox.Show(("Файл-лицензия успешно сгенерирован\nLicense key: " + sb.ToString()), "Успешно!", MessageBoxButtons.OK);
                     KP_SPZ_V29.Close();
-                    //        HDDserialNumber,
-                    //string ProcessorName,
-                    //string ProcessorID,
-                    //string VideoControllerId,
-                    //string BaseGoardSerialNumber
                 }
                 catch(ArgumentException ex)
                 {
@@ -88,6 +73,9 @@ namespace kp_spz_klass
                 catch(Exception exe)
                 {
                     MessageBox.Show(exe.Message, "Ошибка", MessageBoxButtons.OK);
+                }
+                finally
+                {
                 }
             };
         }
