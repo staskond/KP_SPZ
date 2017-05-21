@@ -56,7 +56,14 @@ namespace kp_spz_klass
 
                     //    MessageBox.Show("Файл-лицензия успешно сгенирирован!", "Успешно!", MessageBoxButtons.OK);
                     //}
-
+                    byte[] KeyArray = TDES.Key;
+                    // string bbb = aaa[4].ToString("X2");
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < KeyArray.Count(); i++)
+                    {
+                        sb.Append(KeyArray[i].ToString("X2") + " ");
+                    }
+                    
                     RegistryKey currentPOKey = Registry.CurrentUser;
                     RegistryKey KP_SPZ_V29 = currentPOKey.CreateSubKey("KP_SPZ_V29");
                     KP_SPZ_V29.SetValue("HDDserialNumber", HardWare.HDDserialNumber);
@@ -65,7 +72,7 @@ namespace kp_spz_klass
                     KP_SPZ_V29.SetValue("VideoControllerId", HardWare.VideoControllerId);
                     KP_SPZ_V29.SetValue("BaseGoardSerialNumber", HardWare.BaseGoardSerialNumber);
                     KP_SPZ_V29.SetValue("DateEnd", Convert.ToDateTime(EndDate.Text).ToShortDateString());
-                    KP_SPZ_V29.SetValue("Key", TDES.Key);
+                    KP_SPZ_V29.SetValue("Key", sb.ToString());
                     MessageBox.Show("Файл-лицензия успешно сгенерирован", "Успешно!", MessageBoxButtons.OK);
                     KP_SPZ_V29.Close();
                     //        HDDserialNumber,
