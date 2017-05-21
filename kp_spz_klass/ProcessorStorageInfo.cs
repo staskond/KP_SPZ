@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kp_spz_klass
 {
-    class ProcessorStorageInfo
+    public class ProcessorStorageInfo
     {
         private readonly string processorName;
         private readonly int numbersOfCores;

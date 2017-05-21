@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kp_spz_klass", "kp_spz_klass\kp_spz_klass.csproj", "{6558D287-F3B3-4871-BD74-F2FCE095CC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kp_spz_klassTests", "kp_spz_klassTests\kp_spz_klassTests.csproj", "{A26F1E45-5803-44F0-AD56-190CF01D489E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6558D287-F3B3-4871-BD74-F2FCE095CC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6558D287-F3B3-4871-BD74-F2FCE095CC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6558D287-F3B3-4871-BD74-F2FCE095CC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26F1E45-5803-44F0-AD56-190CF01D489E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26F1E45-5803-44F0-AD56-190CF01D489E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26F1E45-5803-44F0-AD56-190CF01D489E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26F1E45-5803-44F0-AD56-190CF01D489E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

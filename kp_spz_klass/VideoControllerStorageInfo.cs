@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kp_spz_klass
 {
-    class VideoControllerStorageInfo
+    public class VideoControllerStorageInfo
     {
         private readonly string deviceID;
         private readonly string videoProcessor;

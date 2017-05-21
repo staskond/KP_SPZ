@@ -8,9 +8,8 @@ using System.IO;
 
 namespace kp_spz_klass
 {
-    class HDDStorageInfo
+    public class HDDStorageInfo
     {
-        List<HDDStorageInfo> informatino = new List<HDDStorageInfo>();
         private readonly string deviceID;
         private readonly string serialNumber;
         private readonly string model;
