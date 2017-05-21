@@ -48,19 +48,8 @@ namespace kp_spz_klass
                     GetLicenseFile.GetValue("VideoControllerId").ToString(),
                     GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
                     Convert.ToDateTime(GetLicenseFile.GetValue(("DateEnd"))));
-                //    string HDDserialNumber,
-                //string ProcessorName,
-                //string ProcessorID,
-                //string VideoControllerId,
-                //string BaseGoardSerialNumber,
-                //DateTime endDate)
-                //BinaryFormatter formatter = new BinaryFormatter();
-                //using (FileStream fsa = new FileStream("E:\\hardware.dat", FileMode.Open))
-                //{
-                //     newasd = (HardWareInfo)formatter.Deserialize(fsa);
-                //}
 
-                if (GetConfig.Equals(HardWare) && (GetLicenseFile.GetValue("Key").ToString().Length < 28))
+                if (GetConfig.Equals(HardWare) && !(GetLicenseFile.GetValue("Key").ToString().Equals("")))
                 {
                     MessageBox.Show(("License Key\n" + GetLicenseFile.GetValue("Key").ToString()), "Уведомление", MessageBoxButtons.OK);
                 }
