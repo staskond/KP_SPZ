@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Management;
 namespace kp_spz_klass
 {
-    class GetHDDInfo:IDeviceInfo
+    public class GetHDDInfo:IDeviceInfo
     {
         public List<HDDStorageInfo> hddInfo = new List<HDDStorageInfo>();
         public void GetDeviceInfo()

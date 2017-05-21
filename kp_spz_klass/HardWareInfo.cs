@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace kp_spz_klass
 {
     [Serializable]
-    class HardWareInfo
+    public class HardWareInfo
     {
         public string HDDserialNumber { get; set; }
         public string ProcessorName { get; set; }

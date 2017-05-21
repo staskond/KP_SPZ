@@ -50,6 +50,12 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseBoardStrorageInfoTests.cs" />
+    <Compile Include="GetBaseBoardInfoTests.cs" />
+    <Compile Include="GetHDDInfoTests.cs" />
+    <Compile Include="GetProcessorInfoTests.cs" />
+    <Compile Include="GetVideoControllerInfoTests.cs" />
+    <Compile Include="HardWareInfoTests.cs" />
     <Compile Include="HDDStorageInfoTests.cs" />
     <Compile Include="ProcessorStorageInfoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

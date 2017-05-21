@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kp_spz_klass
 {
-    class BaseBoardStrorageInfo
+    public class BaseBoardStrorageInfo
     {
         private readonly string caption;
         private readonly string product;

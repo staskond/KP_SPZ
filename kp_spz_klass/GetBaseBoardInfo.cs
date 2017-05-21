@@ -7,7 +7,7 @@ using System.Management;
 
 namespace kp_spz_klass
 {
-    class GetBaseBoardInfo:IDeviceInfo
+    public class GetBaseBoardInfo:IDeviceInfo
     {
         public List<BaseBoardStrorageInfo> baseBoard = new List<BaseBoardStrorageInfo>();
         public void GetDeviceInfo()

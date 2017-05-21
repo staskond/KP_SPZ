@@ -7,7 +7,7 @@ using System.Management;
 
 namespace kp_spz_klass
 {
-    class GetVideoControllerInfo: IDeviceInfo
+    public class GetVideoControllerInfo: IDeviceInfo
     {
         public List<VideoControllerStorageInfo> videoControllers = new List<VideoControllerStorageInfo>();
 
