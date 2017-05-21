@@ -48,14 +48,6 @@ namespace kp_spz_klass
                     GetLicenseFile.GetValue("VideoControllerId").ToString(),
                     GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
                     Convert.ToDateTime(GetLicenseFile.GetValue(("DateEnd"))));
-                TripleDESCryptoServiceProvider TDES = new TripleDESCryptoServiceProvider();
-                byte[] KeyArray = TDES.Key;
-               // string bbb = aaa[4].ToString("X2");
-                StringBuilder sb = new StringBuilder();
-                for(int i = 0; i < KeyArray.Count(); i++)
-                {
-                    sb.Append(KeyArray[i].ToString("X2") + " ");
-                }
                 //    string HDDserialNumber,
                 //string ProcessorName,
                 //string ProcessorID,
@@ -67,14 +59,16 @@ namespace kp_spz_klass
                 //{
                 //     newasd = (HardWareInfo)formatter.Deserialize(fsa);
                 //}
-                if (GetConfig.Equals(HardWare))
+
+                if (GetConfig.Equals(HardWare) && (GetLicenseFile.GetValue("Key").ToString().Length < 28))
                 {
-                    MessageBox.Show(sb.ToString(), "Уведомление", MessageBoxButtons.OK);
+                    MessageBox.Show(("License Key\n" + GetLicenseFile.GetValue("Key").ToString()), "Уведомление", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    OpenErrorWindow();
                     MessageBox.Show("License unactive!", "Уведомление", MessageBoxButtons.OK);
+                    OpenErrorWindow();
+                    
                 }
                 GetLicenseFile.Close();
 
