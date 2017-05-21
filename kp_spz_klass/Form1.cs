@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,7 +48,14 @@ namespace kp_spz_klass
                     GetLicenseFile.GetValue("VideoControllerId").ToString(),
                     GetLicenseFile.GetValue("BaseGoardSerialNumber").ToString(),
                     Convert.ToDateTime(GetLicenseFile.GetValue(("DateEnd"))));
-                GetLicenseFile.Close();
+                TripleDESCryptoServiceProvider TDES = new TripleDESCryptoServiceProvider();
+                byte[] KeyArray = TDES.Key;
+               // string bbb = aaa[4].ToString("X2");
+                StringBuilder sb = new StringBuilder();
+                for(int i = 0; i < KeyArray.Count(); i++)
+                {
+                    sb.Append(KeyArray[i].ToString("X2") + " ");
+                }
                 //    string HDDserialNumber,
                 //string ProcessorName,
                 //string ProcessorID,
@@ -61,13 +69,14 @@ namespace kp_spz_klass
                 //}
                 if (GetConfig.Equals(HardWare))
                 {
-                    MessageBox.Show("License active!", "Уведомление", MessageBoxButtons.OK);
+                    MessageBox.Show(sb.ToString(), "Уведомление", MessageBoxButtons.OK);
                 }
                 else
                 {
                     OpenErrorWindow();
                     MessageBox.Show("License unactive!", "Уведомление", MessageBoxButtons.OK);
                 }
+                GetLicenseFile.Close();
 
             }
             catch (ArgumentException ex)
